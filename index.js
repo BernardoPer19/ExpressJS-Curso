@@ -2,16 +2,12 @@ import express from "express";
 
 const app = express();
 
-app.get("/user", (req, res) => {
-  res.json({
-    name: "joe",
-    usrname: "rat",
-    age: 30,
-    adress: {
-      city: "new york",
-      street: "some street 123",
-    },
-  });
+app.get("/search", (req, res) => {
+  if (req.query.q == "js") {
+    res.send("lista de JS");
+  } else {
+    res.send("algo normal");
+  }
 });
 
 app.listen(3000);
